@@ -1,0 +1,143 @@
+.promise-box {
+    width: 100%;
+    padding: 40px 0;
+    margin-top: 60px;
+    background: #1f1f20;
+    border-bottom: 1px solid #333;
+    ul {
+        width: 1260px;
+        margin: 0 auto;
+        overflow: hidden;
+        li {
+            float: left;
+            margin: 0 60px 0 186px;
+            height: 40px;
+            line-height: 40px;
+            background-position: left bottom;
+            background-repeat: no-repeat;
+            text-indent: 60px;
+            font-size: 18px;
+            color: #999;
+        }
+        li.icon-zan {
+            background-image: url(../images/icon-zan.png);
+        }
+        li.icon-car {
+            text-indent: 70px;
+            background-image: url(../images/icon-car.png);
+        }
+        li.icon-change {
+            background-image: url(../images/icon-change.png);
+        }
+    }
+}
+.bottom-footer {
+    background: #1f1f20;
+    border-top: 1px solid #333;
+    padding: 60px 0 100px;
+    font-size: 14px;
+    color: #666;
+    line-height: 30px;
+    .bottom-footer-wrap {
+        width: 1260px;
+        height: 176px;
+        margin-left: auto;
+        margin-right: auto;
+        .bottom-footer-help {
+            padding-left: 186px;
+           
+            a {
+                color: #666;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            dl {
+                width: 190px;
+                float: left;
+                dt {
+                    font-weight: 700;
+                    color: #999;
+                    padding-bottom: 26px;
+                }
+            }
+            
+            .wechat-tip {
+                display: none;
+                position: absolute;
+                left: -50px;
+                top: -160px;
+            }
+            .wechat:hover .wechat-tip{
+                display: inline;
+            }
+            .bottom-footer-other {
+                width: 314px;
+                float: right;
+                .bottom-footer-faq {
+                    width: 190px;
+                    text-align: center;
+                    margin-left: -45px;
+                    h3 {
+                        color: #999;
+                        padding-top: 3px;
+                        padding-bottom: 10px;
+                        font-size: 26px;
+                    }
+                    .ol {
+                        display: inline-block;
+                        width: 78px;
+                        height: 28px;
+                        font: 14px/28px "Microsoft YaHei";
+                        background: #5289f0;
+                        border-radius: 5px;
+                        color: #FFF;
+                        vertical-align: middle;
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+.copyright {
+    padding: 25px 0 30px 0;
+    text-align: center;
+    background: #1f1f20;
+    .wrap {
+        width: 1239px;
+        margin: 0 auto;
+        font-size: 12px;
+        a {
+            color: #666;
+            &:hover{
+                color: #f00;
+            }
+        }
+        ul {
+            margin: 0 auto;
+            overflow: hidden;
+            .cf::after {
+                clear: both;
+            }
+            li {
+                float: left;
+                width: 70px;
+                text-align: center;
+                height: 12px;
+                line-height: 12px;
+                border-right: 1px solid #DDD;
+                text-align: center;
+                margin-right: -1px;
+            }
+
+        }
+        .text {
+            padding: 24px 0 15px 0;
+            color: #999;
+        }
+        .link a {
+            margin: 0 3px;
+        }
+    }
+}

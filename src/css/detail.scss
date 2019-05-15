@@ -1,0 +1,226 @@
+@import "module/base.scss";
+@import "module/header.scss";
+@import "module/footer.scss";
+
+
+body {
+    font-size: 12px;
+    font-family: "Microsoft YaHei",Verdana,Geneva,sans-serif,宋体;
+    background-color: #fafafa;
+    min-width: 1260px;
+    padding-top: 130px;
+    color: #474747;
+}
+main{
+    width: 1263px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    .nav_bar {
+        height: 44px;
+        line-height: 44px;
+        background-color: #f5f5f5;
+        color: #666;
+        .wrap {
+            width: 1239px;
+            margin: 0 auto;
+            a {
+                padding-right: 3px;
+                color: #666;
+                &:hover{
+                    color: #f00;
+                }
+            }
+        }
+    }
+    .detail {
+        padding: 30px 0 40px 0;
+        background-color: #FFF;
+        overflow: hidden;
+        .wrap {
+            width: 1239px;
+            margin: 0 auto;
+            overflow: hidden;
+            .f_left {
+                float: left;
+                .picture {
+                    width: 430px;
+                    position: relative;
+                    overflow: hidden;
+                    margin-right: 59px;
+                    .view_bd img {
+                        width: 430px;
+                        height: 430px;
+                        display: block;
+                    }
+                    .hd {
+                        position: static;
+                        width: 100%;
+                        padding-top: 10px;
+                        overflow: hidden;
+                        left: 0;
+                        bottom: 30px;
+                        z-index: 1;
+                        text-align: center;
+                        ul {
+                            margin-right: -10px;
+                            overflow: hidden;
+                            li {
+                                float: left;
+                                text-align: center;
+                                img {
+                                    cursor: pointer;
+                                    margin-right: 10px;
+                                    width: 100px;
+                                    height: 100px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            .property {
+                width: 684px;
+                font-size: 14px;
+                .title h1 {
+
+                    padding-bottom: 20px;
+                    font-size: 30px;
+                    color: #474747;
+                    font-weight: normal;
+                
+                }
+                .title p {
+
+                    font-size: 16px;
+                    color: #666;
+                
+                }
+                .price {
+
+                    padding: 20px 0;
+                    margin: 34px 0 25px 0;
+                    font-size: 26px;
+                    color: #e90404;
+                    border-top: 1px solid #efefef;
+                    border-bottom: 1px solid #efefef;
+                
+                }
+                table th {
+                    height: 48px;
+                    text-align: left;
+                    font-weight: normal;
+                    color: #9a9a9a;
+                    width: 72px;
+                }
+                .meta .from {
+                    padding-right: 5px;
+                }
+                .meta .to {
+                    padding-right: 15px;
+                }
+                .meta font {
+                    margin-left: 29px;
+                }
+                a.option {
+
+                    position: relative;
+                    padding: 4px 15px;
+                    margin-bottom: 5px;
+                    border: 1px solid #e0e0e0;
+                    color: #333;
+                    display: inline-block;
+                
+                }
+                .amount {
+
+                    display: inline-block;
+                    width: 78px;
+                    height: 22px;
+                    margin-right: 11px;
+                    border: 1px solid #e0e0e0;
+                    vertical-align: middle;
+                    .reduce {
+
+                        background: url(../images/base.png) no-repeat -234px -97px;
+                    
+                    }
+                    span {
+
+                        width: 23px;
+                        height: 22px;
+                        vertical-align: middle;
+                        cursor: pointer;
+                        float: left;
+                        &:hover {
+
+                            background-color: #f0f0f0;
+                        
+                        }
+                    
+                    }
+                    input {
+
+                        width: 32px;
+                        height: 22px;
+                        line-height: 22px;
+                        text-align: center;
+                        border: 0;
+                        vertical-align: middle;
+                        font-size: 12px;
+                        resize: none;
+                        outline: 0;
+                        float: left;
+                    }
+                    .plus {
+
+                        background: url(../images/base.png) no-repeat -233px -132px;
+                        
+                    
+                    }
+                    
+                }
+                .btns {
+
+                    padding: 20px 0 53px;
+                    a {
+
+                        display: inline-block;
+                        width: 260px;
+                        height: 66px;
+                        line-height: 66px;
+                        margin-right: 16px;
+                        text-align: center;
+                        font-size: 24px;
+                    
+                    }
+                    .buy {
+
+                        background-color: #e32332;
+                        color: #FFF;
+                        &:hover {
+
+                            background-color: #C00;
+                        
+                        }
+                    }
+                    .add {
+
+                        width: 258px;
+                        height: 64px;
+                        line-height: 64px;
+                        border: 1px solid #e32330;
+                        color: #ea0406;
+                        &:hover {
+
+                            background-color: #C00;
+                            color: #FFF;
+                        
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

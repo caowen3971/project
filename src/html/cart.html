@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车 </title>
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+
+<body>
+
+    <header id="header-container"></header>
+    <div class="nav_bar">
+            <div class="wrap">
+                <a href="/">首页</a>
+                &gt; <a href="/html/list.html">我的购物车</a>
+            </div>
+    </div>
+    <main>
+        
+        <div class="wrap">
+
+            <div class="cart_list">
+                <form id="cartForm" method="post" action="/buy/preCheckout">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <td class="state"><span class="all_checkbox"><span class="checkbox"><label
+                                                class="curr"></label></span><label>全选</label></span></td>
+                                <td class="name">商品名称</td>
+                                <td class="discount">优惠</td>
+                                <td class="num">数量</td>
+                                <td class="prices">价格</td>
+                                <td class="operation">操作</td>
+                            </tr>
+                        </thead>
+                        <tbody id="list-container"></tbody>
+                        <script type="text/html" id="cart-template">
+                                {{each cart item}}
+                                <tr data-id={{item.id}}>
+                                    <td class="state">
+                                        <span class="checkbox">
+                                            <input type="checkbox" name="pids" check-id="{{item.checked}}" />
+                                            <label class="curr shopCheck"></label>
+                                        </span>
+                                    </td>
+                                    <td>
+    
+                                        <dl class="cf">
+                                            <dt class="f_left">
+                                                <a href="detail.html?id={{item.id}}" target="_blank">
+    
+                                                    <img src="{{item.imgs[0]}}" alt="" title="{{item.title}}" />
+                                                </a>
+                                            </dt>
+                                            <dd class="f_left">
+                                                <h1>
+                                                    <a href="detail.html?id={{item.id}}" class="name ellipsis2" target="_blank">{{item.title}}</a>
+                                                </h1>
+    
+                                                <h2 class="sub_title ellipsis2">{{item.title2}}</h2>
+    
+    
+                                                <p class="ellipsis2">尺码:S</p>
+    
+    
+                                            </dd>
+                                        </dl>
+    
+    
+                                    </td>
+                                    <td class="discount">
+    
+                                    </td>
+                                    <td>
+                                        <span class="amount number-input">
+                                            <span class="reduce"></span>
+                                            <input class="shopNum" name="shopNum"  type="text" value="{{item.num}}" min="1"data-stock="7" data-suit-number="1" maxlength="3">
+                                            <span class="plus"></span>
+                                        </span>
+    
+    
+                                    </td>
+                                    <td class="price">¥<span class="rmbPrice">{{(item.price * item.num).toFixed(2)}}</span>
+                                    </td>
+                                    <td><a href="javascript:;" class="del" data-id="{{item.id}}"><span></span></a></td>
+                                </tr>
+                                {{/each}}
+                        </script>
+                            
+
+                        
+                    </table>
+                    <div class="cf total_bar">
+                        <p class="f_left">
+                            <span class="all_checkbox"><span class="checkbox"><label
+                                        class="curr"></label></span><label>全选</label></span>
+                            <a href="javascript:;" class="batch-delete">删除选中商品</a>
+                            <a href="/">继续购物</a>
+                        </p>
+                        <div class="f_right">
+                            <div class="f_right">
+                                <input type="button" value="去结算" disabled="disabled" class="btn btn_off btn_checkout" />
+                                <p class="tip tip_checkout" style="display: none;"></p>
+                            </div>
+                            <p class="f_right">共
+                                <span id="num">0</span>件商品，　合计：¥<span id="allPrice">0.00</span></p>
+                        </div>
+                    </div>
+                </form>
+            </div>   
+        </div>
+    </main>
+
+    <footer id="footer-container"></footer>
+    <script src="/lib/requirejs/require.js" data-main="/js/cart.js"></script>
+
+</body>
+
+</html>

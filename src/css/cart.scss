@@ -1,0 +1,272 @@
+@import "module/base.scss";
+@import "module/header.scss";
+@import "module/footer.scss";
+
+
+body {
+    font-size: 12px;
+    font-family: "Microsoft YaHei",Verdana,Geneva,sans-serif,宋体;
+    background-color: #fafafa;
+    min-width: 1260px;
+    padding-top: 130px;
+    color: #474747;
+}
+.ellipsis2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+.f_left {
+    float: left;
+}
+.nav_bar {
+    height: 44px;
+    line-height: 44px;
+    background-color: #f5f5f5;
+    color: #666;
+    .wrap {
+        width: 1239px;
+        margin: 0 auto;
+        a {
+            padding-right: 3px;
+            color: #666;
+            &:hover{
+                color: #f00;
+            }
+        }
+    }
+}
+main{
+    width: 1263px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    .wrap {
+        width: 1239px;
+        margin: 0 auto;
+        .cart_list { 
+            td {
+                background-color: #FFF;
+                border-bottom: 1px solid #ededed;
+                text-align: center;
+            }
+            table {
+                width: 100%;
+            }
+            thead .state {
+                width: 111px;
+                
+            }
+            thead td {
+                height: 54px;
+                font-size: 14px;
+                color: #666;
+            }
+            thead .discount {
+                width: 100px;
+            }
+            thead .num {
+                width: 200px;
+            }
+            thead .prices {
+                width: 150px;
+            }
+            thead .operation {
+                width: 150px;
+            }
+            span {
+                margin-right: 10px;
+                
+            }
+            .checkbox {
+                position: relative;
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                vertical-align: middle;
+                &:hover label{
+                    background:#fff url(../images/base.png) no-repeat -78px -116px;
+                }
+                label.curr {
+                    background: #e32332 url(../images/base.png) no-repeat -78px -100px;
+                    border-color: #e32332;
+                }
+                
+                label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 16px;
+                    height: 16px;
+                    border: 1px solid #d4d4d4;
+                    background-color: #FFF;
+                    cursor: pointer;
+                }
+            }
+            dl {
+                margin: 29px 0;
+                height: 78px;
+                
+            }
+            
+            dt a {
+                display: block;
+                position: relative;
+            }
+            td img {
+                width: 72px;
+                height: 72px;
+                border: 1px solid #ddd;
+            }
+            dd {
+                text-align: left;
+                margin-left: 18px;
+                p {
+                    color: #999;
+                    height: 18px;
+                    display: inline-block;
+                    overflow: hidden;
+                    max-width: 400px;
+                }
+                h1 {
+                    width: 436px;
+                    display: block;
+                    font-size: 14px;
+                    color: #424242;
+                    font-weight: normal;
+                    a.name {
+                        max-width: 400px;
+                        height: 20px;
+                        overflow: hidden;
+                        color: #424242;
+                        
+                    }
+                }
+                h2 {
+                    max-width: 400px;
+                    display: block;
+                    margin: 5px 0 10px;
+                    height: 18px;
+                    color: #666;
+                    font-weight: normal;
+                    overflow: hidden;
+                    font-size: 12px; 
+                }
+            }
+            .number-input{
+                display: inline-block;
+                width: 78px;
+                height: 22px;
+                
+                margin-right: 0;
+                border: 1px solid #e0e0e0;
+                vertical-align: middle;
+                span{
+                    margin-right: 0;
+                    float: left;
+                    &:hover {
+                        background-color: #f0f0f0;
+                    }
+                }
+            }
+            .amount span {
+                display: inline-block;
+                width: 23px;
+                height: 22px;
+                vertical-align: middle;
+                cursor: pointer;
+            }
+            .amount .reduce {
+                background: url(../images/base.png) no-repeat -234px -97px;
+            }
+            .amount input {
+                width: 32px;
+                height: 22px;
+                line-height: 20px;
+                text-align: center;
+                float: left;
+                border: 0;
+                vertical-align: middle;
+                font-size: 12px;
+                outline: none;
+            }
+            .amount .plus {
+                background: url(../images/base.png) no-repeat -233px -132px;
+            }
+            td.price {
+                font-size: 20px;
+                color: #e90404;
+            }
+            td .del {
+                display: inline-block;
+                width: 22px;
+                height: 20px;
+                padding-top: 2px;
+                border-radius: 11px;
+                span{
+                    margin-right: 0;
+                }
+                &:hover span {
+                    background-position: -292px -20px;
+                }
+                &:hover {
+                    background-color: #e32332;
+                }
+            }
+            td .del span {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                overflow: hidden;
+                background: url(../images/base.png) no-repeat -292px 0;
+            }
+            .total_bar {
+                margin-top: 5px;
+                height: 90px;
+                line-height: 90px;
+                padding: 0 32px 0 28px;
+                background-color: #FFF;
+                font-size: 14px;
+                color: #666;
+                .f_left span {
+                    margin-right: 10px;
+                }
+                .f_left a {
+                    margin-left: 22px;
+                    color: #474747;
+                    &:hover{
+                        color: #e90404;
+                    }
+                }
+                .f_right {
+                    position: relative;
+                    float: right;
+                    .btn {
+                        width: 188px;
+                        height: 50px;
+                        margin-left: 20px;
+                        font-size: 18px;
+                        border: 0;
+                        cursor: pointer;
+                        color: #FFF;
+                        background-color: #e32332;
+                        &:hover {
+                            background-color: #C00;
+                        }
+                    }
+                    span{
+                        color: #e90404;
+                    }
+                }
+            }
+            span.checkbox {
+                position: relative;
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
