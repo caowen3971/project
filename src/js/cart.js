@@ -2,7 +2,10 @@ require(['require.config'], () => {
     require(['template', 'header', 'footer'], (template, header) => {
         class Cart {
             constructor () {
-              this.init();
+              this.count = 0;
+              this.init ();
+              this.allCheck ();
+              
             }
       
             init () {
@@ -34,6 +37,8 @@ require(['require.config'], () => {
                 if(str ==='false'){
                   str = false;
                   $(this).next().removeClass('curr');
+                }else{
+                  $(this).next().addClass('curr');
                 } 
                 $(this).prop('checked' ,str);
                 
@@ -95,6 +100,7 @@ require(['require.config'], () => {
 
             delShop () {
                 let _this = this;
+                
                 $("#list-container").on('click','.del',function () {
                     $(this).parent().parent().remove();
                     let cart =localStorage.getItem('cart');
@@ -109,18 +115,30 @@ require(['require.config'], () => {
                             return shop.id == id;
                         })
                         if(hasShop){
-                            console.log(index);
                             cart.splice(index,1);
                             localStorage.setItem('cart', JSON.stringify(cart));
                             header.calcCartNum();
                         }
                     }
+                    let allInput = $("input[type=checkbox]");
+                    _this.count = 0;
+                    allInput.each(function(){
+                      if($(this).prop('checked')){
+                        
+                        _this.count++;
+                        
+                      }
+                    })
+                    console.log(allInput.length);
+                    console.log(_this.count);
+                    allInput.length == _this.count ? $('.allcheck').addClass('curr') : $('.allcheck').removeClass('curr');
                     _this.calcAllPrice ();
                 })
             }
             
             clickCheck () {
               let _this = this;
+              
               $("#list-container").on('click','.shopCheck',function () {
                 let shopInput = $(this).prev("input");
                 if($(this).hasClass('curr')){
@@ -138,8 +156,9 @@ require(['require.config'], () => {
                     //返回是否找到
                     return shop.id == id;
                   })
-                  cart[index].checked = 'false';
+                  cart[index].checked = false;
                   localStorage.setItem('cart', JSON.stringify(cart));
+                  
 
 
                 }else{
@@ -159,12 +178,23 @@ require(['require.config'], () => {
                     //返回是否找到
                     return shop.id == id;
                   })
-                  cart[index].checked = 'ture';
+                  cart[index].checked = true;
                   localStorage.setItem('cart', JSON.stringify(cart));
+                  
 
 
                 }
-                
+                // _this.allCheck ();
+                let allInput = $("input[type=checkbox]");
+                _this.count = 0;
+                allInput.each(function(){
+                  if($(this).prop('checked')){
+                    
+                    _this.count++;
+                    
+                  }
+                })
+                allInput.length == _this.count ? $('.allcheck').addClass('curr') : $('.allcheck').removeClass('curr');
                 _this.calcAllPrice ();
               })
 
@@ -208,23 +238,73 @@ require(['require.config'], () => {
                 }
               })
               $("#num").html(allNum);
-              $("#allPrice").html(allPrice.toFixed(2));
+              $("#allPrice").html("¥" + allPrice.toFixed(2));
             }
 
 
             delChecked () {
+
               $('.batch-delete').on('click',function () {
                 let allInput = $("input[type=checkbox]");
                 allInput.each(function(){
-                if($(this).prop('checked')){
+                  if($(this).prop('checked')){
 
                   let delbtn = $(this).parents("tr").find(".del");
                   delbtn.trigger('click');
                   
-                }
+                  }
                 })
+               
               })
               
+            }
+
+            allCheck () {
+              let cart =localStorage.getItem('cart');
+              cart = JSON.parse(cart);
+              let _this = this;
+              let allInput = $("input[type=checkbox]");
+              
+              
+              $('.allcheck').on('click',function () {
+                if($('.allcheck').hasClass('curr')){
+                  $('.allcheck').removeClass('curr');
+                  allInput.each(function(){
+                    $(this).next().removeClass('curr');
+                    $(this).prop('checked',false);
+                    $(this).next().prop('check-id', false);
+                   
+                    cart.forEach(function (itme) {
+                      itme.checked = false;
+                    });
+
+                  })
+                }else{
+                  $('.allcheck').addClass('curr');
+                  allInput.each(function(){
+                    $(this).next().addClass('curr');
+                    $(this).prop('checked',true);
+                    $(this).next().prop('check-id', true);
+
+                    cart.forEach(function (itme) {
+                      itme.checked = true;
+                    });
+                   
+                  })
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                _this.calcAllPrice ();
+              })
+              
+              allInput.each(function(){
+                if($(this).prop('checked')){
+
+                  _this.count++;
+                  
+                }
+              })
+              allInput.length == _this.count ? $('.allcheck').addClass('curr') : $('.allcheck').removeClass('curr');
+
             }
 
           }

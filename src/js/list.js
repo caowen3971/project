@@ -55,13 +55,13 @@ require(['require.config'], () =>{
                                 cart[index].num++;
                             }else{
                                 //没有数据
-                                cart.push({...data, num:1, checked:'ture'});
+                                cart.push({...data, num:1, checked: true});
                             }
         
                         }else{
                             //购物车为空
                             console.log(data);
-                            cart = [{...data, num:1, checked:'ture'}];
+                            cart = [{...data, num:1, checked: true}];
                         }
                           
                         }

@@ -89,13 +89,13 @@ require(['require.config'], () => {
                         cart[index].num += shopNum;
                     }else{
                         //没有数据
-                        cart.push({...this.data, num: shopNum, checked: 'ture'});
+                        cart.push({...this.data, num: shopNum, checked: true});
                     }
 
                 }else{
                     //购物车为空
                     
-                    cart = [{...this.data, num: shopNum, checked: 'ture'}];
+                    cart = [{...this.data, num: shopNum, checked: true}];
                 }
 
                 localStorage.setItem('cart', JSON.stringify(cart));

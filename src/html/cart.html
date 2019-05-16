@@ -27,8 +27,14 @@
                     <table cellpadding="0" cellspacing="0">
                         <thead>
                             <tr>
-                                <td class="state"><span class="all_checkbox"><span class="checkbox"><label
-                                                class="curr"></label></span><label>全选</label></span></td>
+                                <td class="state">
+                                    <span class="all_checkbox">
+                                        <span class="checkbox">
+                                            <label class="curr allcheck"></label>
+                                        </span>
+                                        <label>全选</label>
+                                    </span>
+                                </td>
                                 <td class="name">商品名称</td>
                                 <td class="discount">优惠</td>
                                 <td class="num">数量</td>
@@ -43,7 +49,7 @@
                                     <td class="state">
                                         <span class="checkbox">
                                             <input type="checkbox" name="pids" check-id="{{item.checked}}" />
-                                            <label class="curr shopCheck"></label>
+                                            <label class="shopCheck"></label>
                                         </span>
                                     </td>
                                     <td>
@@ -95,8 +101,12 @@
                     </table>
                     <div class="cf total_bar">
                         <p class="f_left">
-                            <span class="all_checkbox"><span class="checkbox"><label
-                                        class="curr"></label></span><label>全选</label></span>
+                            <span class="all_checkbox">
+                                <span class="checkbox">
+                                    <label class="curr allcheck"></label>
+                                </span>
+                                <label>全选</label>
+                            </span>
                             <a href="javascript:;" class="batch-delete">删除选中商品</a>
                             <a href="/">继续购物</a>
                         </p>
@@ -106,7 +116,7 @@
                                 <p class="tip tip_checkout" style="display: none;"></p>
                             </div>
                             <p class="f_right">共
-                                <span id="num">0</span>件商品，　合计：¥<span id="allPrice">0.00</span></p>
+                                <span id="num">0</span>件商品，　合计：<span id="allPrice">0.00</span></p>
                         </div>
                     </div>
                 </form>
