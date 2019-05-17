@@ -111,8 +111,7 @@
         
                                             <span class="amount number-input">
                                                 <span class="reduce disable"></span>
-                                                <input id="buyNumber" type="text" value="1" min="1" stock="7" maxlength="3"
-                                                    style="ime-mode: disabled;" autocomplete="off">
+                                                <input id="buyNumber" type="text" value="1" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" min="1"  maxlength="3" style="ime-mode: disabled;" autocomplete="off">
                                                 <span class="plus"></span>
                                             </span>
         
